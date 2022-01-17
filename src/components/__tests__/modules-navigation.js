@@ -1,25 +1,23 @@
-import React from 'react';
-import { render, cleanup } from '../../utils/test-utils';
-import ModuleNav from '../modules-navigation';
+import React from 'react'
+import { render, cleanup } from '../../utils/test-utils'
+import ModuleNav from '../modules-navigation'
 
 const mockModule = {
   id: 'l_1',
   title: 'The Night Sky',
-  content:
-    '# Et tempus voces tigride remisso fer coimus\n\n## Montibus arbusta detrectas haud\n\n',
+  content: '# Et tempus voces tigride remisso fer coimus\n\n## Montibus arbusta detrectas haud\n\n',
   thumbnail: null,
   videoUrl: 'https://youtu.be/dlKzlksOUtU',
   topic: 'Cat-stronomy',
-  length: 164,
-};
+  durationInSeconds: 164,
+}
 
 const mockParentTrack = {
   id: 'c_0',
   title: 'Cat-stronomy, an introduction',
   description: '# Pulchra vehi vidit misera sola armenta secabatur\n\n',
-  thumbnail:
-    'https://res.cloudinary.com/dety84pbu/image/upload/v1598465568/nebula_cat_djkt9r.jpg',
-  trackLength: 2377,
+  thumbnail: 'https://res.cloudinary.com/dety84pbu/image/upload/v1598465568/nebula_cat_djkt9r.jpg',
+  durationInSeconds: 2377,
   modulesCount: 10,
   numberOfViews: 51,
   author: {
@@ -31,16 +29,16 @@ const mockParentTrack = {
     {
       id: 'l_0',
       title: 'Exploring Time and Space',
-      length: 258,
+      durationInSeconds: 258,
     },
   ],
-};
+}
 
 describe('Modules Navigation View', () => {
   // automatically unmount and cleanup DOM after the test is finished.
-  afterEach(cleanup);
+  afterEach(cleanup)
 
   it('renders without error', () => {
-    render(<ModuleNav module={mockModule} track={mockParentTrack} />);
-  });
-});
+    render(<ModuleNav module={mockModule} track={mockParentTrack} />)
+  })
+})
